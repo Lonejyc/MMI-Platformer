@@ -8,9 +8,12 @@ public class moove : MonoBehaviour
     public float jumpForce = 3.0f;
     public float gravity = 9.8f;
     private Vector3 moveD = Vector3.zero;
+
+    public Transform Body;
+    private Vector3 rotation;
     CharacterController controller;
     Animator anim;
-
+   
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -22,9 +25,18 @@ public class moove : MonoBehaviour
         handleAnimation();
         if (controller.isGrounded)
         {
+            
             moveD = new Vector3(0, 0, Input.GetAxis("Horizontal"));
             moveD = transform.TransformDirection(moveD);
             moveD *= speed;
+
+
+            
+            // if (moveD.x > 0)
+            //     Flip();
+            // else if (moveD.x < 0)
+            //     Flip();
+
             if (Input.GetButton("Jump"))
             {
                 moveD.y = jumpForce;
@@ -55,4 +67,5 @@ public class moove : MonoBehaviour
             anim.SetBool("isJumping", false);
         }
     }
+   
 }
