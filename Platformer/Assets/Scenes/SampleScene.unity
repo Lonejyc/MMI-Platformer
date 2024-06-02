@@ -4526,6 +4526,7 @@ MonoBehaviour:
   - {fileID: 529695358}
   - {fileID: 300560090}
   graphics: {fileID: 752774674}
+  damageOnCollision: 10
 --- !u!61 &752774673
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8872,7 +8873,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 0
+  currentHealth: 100
+  isInvicible: 0
+  graphics: {fileID: 1217973700}
   healthBar: {fileID: 1198960187}
 --- !u!1 &1269217370
 GameObject:
